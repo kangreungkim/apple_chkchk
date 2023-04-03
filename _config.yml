@@ -1,120 +1,72 @@
----
-#-------------------------------
-# General Site Settings
-baseurl: "" # The subpath of your site, e.g. /blog
-url: "http://apple.chkchk.co.kr" # The base hostname & protocol for your site, e.g. http://example.com
+# Site
+name: "Mediumish"
+title: "apple 호갱노노"
+description: "Apple IPHONE IPAD WATCH MACBOOK 최저가 찾기"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: ''
+google_analytics: 'UA-46278016-1'
+disqus: 'demowebsite'
+mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+include: ["_pages"]
+permalink: /:title/
 
-title: Apple | 애플 호갱 노노
-logo: /assets/images/logo.png # You can add own logo
-description: # Add your awesome description
-copyright: Copyright 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)
-# Preloader
-preloader: true # To disable preloader change value to false
+# Authors
+authors:
+  sal:
+    name: Sal
+    display_name: Sal
+    gravatar: e56154546cf4be74e393c62d1ae9f9d4
+    email: wowthemesnet@gmail.com
+    web: https://www.wowthemes.net
+    twitter: https://twitter.com/wowthemesnet
+    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
+  john:
+    name: John
+    display_name: John    
+    avatar: 'assets/images/avatar.png'
+    gravatar: b1cc14991db7a456fcd761680bbc8f81
+    email: wowthemesnet@gmail.com
+    web: https://www.wowthemes.net
+    twitter: https://twitter.com/wowthemesnet
+    description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
 
-menu:
-  - name: Home
-    url: /
-  - name: About
-    url: /about/
-  - name: Contact
-    url: /contact/
-
-# *** NOTE ***
-# You can add submenus. For example:
-
-#  menu:
-#  - name: Home
-#    url: /
-#    submenu:
-#     - name: Peru
-#       url: /peru/
-# ----------------------------------
-
-layout_home_page: true # Homepage layout ( two layout is available, you can set the another layout by change the value of layout_home_page "true" to "false")
-
-featured-post-slider: true # You can enable or disable the featured-post-slider using true or false values.
-
-#-------------------------------
-# Hero Section
-hero:
-  hero-subtitle: I’m a Freelance Interactive Art Director based in France. Focusing across branding and identity, digital and print.
-  hero-banner: /assets/images/banner-img.png # Add your banner image '/assets/images/'
-
-#-------------------------------
-# Author Settings
-author:
-  name: Kim young seon
-
-#-------------------------------
-# Contact Info
-contact:
-  email: kangreung.kim@gmail.com
-  phone: +90 000 333 22
-  address:
-    city: Hwasung
-    street: Dongtan
-
-# Contact Form
-contact-form: kangreung.kim@gmail.com
-
-# Social links
-social:
-  - { icon: "ti-facebook", link: "#" }
-  - { icon: "ti-twitter-alt", link: "#" }
-  - { icon: "ti-linkedin", link: "#" }
-  - { icon: "ti-github", link: "#" }
-
-#-------------------------------
-# Comment Section (Disqus)
-disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
-
-#-------------------------------
-# Instagram Feed
-instafeed: true # To enable the instafeed, use the value true. To turn off use the value false.
-userID: 4044026246
-accessToken: 4044026246.1677ed0.8896752506ed4402a0519d23b8f50a17
-
-#-------------------------------
-# Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1.
-
-#-------------------------------
-# Build settings
-markdown: kramdown
-permalink: pretty
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll/tagging
+  - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-archives
-
-paginate: 10
-paginate_path: "/page/:num"
-
-# Pages Path
-defaults:
-  - scope:
-      path: "_pages"
-    values:
-      permalink: /:basename:output_ext
-
-include:
-  - _pages
-
-# Tags
-tag_page_dir: tag
-tag_page_layout: tag_page
-tag_permalink_style: pretty
-
-# categories
+    
+# Archives
 jekyll-archives:
-  enabled: all
-  layout: category
+  enabled:
+    - categories
+  layout: archive
   permalinks:
-    category: "/category/:name/"
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
 
-# Exclude from processing.
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
